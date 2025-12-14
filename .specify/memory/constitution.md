@@ -1,55 +1,130 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT
+Version change: 0.1.0 → 1.0.0
+Modified principles: All principles updated from template values
+Added sections: Key Standards, Constraints and Technical Requirements
+Removed sections: None
+Templates requiring updates: 
+- ✅ .specify/templates/plan-template.md
+- ✅ .specify/templates/spec-template.md  
+- ✅ .specify/templates/tasks-template.md
+- ⚠ .specify/templates/commands/*.md - needs review
+- ⚠ README.md - needs review
+Follow-up TODOs: None
+-->
+
+# Physical AI & Humanoid Robotics Textbook Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Technical Accuracy
+All content must strictly align with official documentation: ROS 2 Humble, Gazebo/Ignition, Unity Robotics Hub, NVIDIA Isaac Sim 4.x, OpenAI API & VLA developer docs. This ensures that all instructions, code, and explanations match the actual behavior of the systems being taught.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Learnability
+Content must be structured, beginner-friendly, and suitable for CS/AI/Robotics students. All concepts should be introduced with clear explanations before moving to implementation details, ensuring students can follow along regardless of their prior experience level.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Hands-On Orientation
+Every concept must include runnable simulations, working code, reproducible experiment steps. Theory without practice is ineffective for robotics education; all content must include hands-on activities that students can perform to reinforce learning.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Safety First
+All robotics instructions must follow standard hardware & simulation safety. This includes proper setup procedures, safe operation guidelines, and risk mitigation strategies for both physical and simulated environments.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Modularity
+Each chapter must stand alone and be navigable independently. Students should be able to pick and choose modules relevant to their needs without having to work through prerequisite chapters in sequence.
 
-### [PRINCIPLE_6_NAME]
+### Accessibility
+Textbook must build cleanly in Docusaurus and deploy perfectly on GitHub Pages. This ensures that the content is accessible to all students regardless of their computing environment or physical abilities.
 
+## Key Standards
 
-[PRINCIPLE__DESCRIPTION]
+### Code Quality
+All code must be tested & runnable. Include environment setup and troubleshooting. Python, ROS 2, URDF/XACRO must follow best practices. This ensures that students can reproduce all examples without running into technical issues.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Documentation Sources
+Only use verifiable official sources. All information must be traceable to official documentation from ROS 2, Gazebo, Unity, NVIDIA Isaac, or OpenAI to ensure accuracy and maintainability.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Images & Simulations
+Screenshots and diagrams must match real simulation output. Visual aids must accurately represent the actual output that students will see when following instructions, preventing confusion and frustration.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Writing Standards
+Professional engineering tone, Step-by-step instructions, No filler content, only actionable material. Content should be clear, concise, and focused on helping students achieve specific learning objectives.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Constraints and Technical Requirements
+
+### Book Format
+Docusaurus v3, GitHub Pages deployment, Markdown-based chapters. The technical constraints ensure consistent deployment and maintainability across the project lifecycle.
+
+### Chapter Requirements
+Each chapter (10–20 pages) must include learning objectives, code samples, diagrams, simulation walkthrough, troubleshooting. These requirements ensure consistent quality and coverage across all textbook modules.
+
+### Technical Requirements
+Ubuntu 22.04, ROS 2 Humble, Python 3.12+, Hardware focus: low-cost educational robots or simulation-only. These platform constraints ensure that content is accessible to students with limited resources while maintaining compatibility with current industry tools.
+
+## Success Criteria
+
+* All instructions error-free
+* All simulations run exactly as documented
+* `npm run build` passes
+* GitHub Pages deploys with no broken links
+* RAG chatbot answers correctly using textbook content
+* Peer review passes
+* Code executes correctly
+* Navigation clear & modular
+* Diagrams match simulation results
+
+## Spec-Kit Plus Workflow (Mandatory)
+
+Each module must follow the Spec-Kit Plus pipeline:
+
+1. **/sp.constitution** → Project constitution (this file)
+2. **/sp.specify** → Chapter-level specifications
+3. **/sp.clarify** → Requirement refinement
+4. **/sp.plan** → Full implementation plan
+5. **/sp.tasks** → Break into atomic tasks
+6. **/sp.implement** → Generate content and code
+7. **/sp.adr** → Architectural decisions
+
+No manual file creation.
+
+## Module Coverage (Mandatory)
+
+### Module 1: ROS 2 Foundations
+* Nodes, topics, services
+* URDF/XACRO robot modeling
+* RViz visualization
+* Basic mobile robot simulation
+
+### Module 2: Gazebo/Unity Simulation
+* World building
+* Physics engines
+* Sensors: Camera, LiDAR, IMU
+* Exporting ROS 2–compatible environments
+
+### Module 3: NVIDIA Isaac (Perception + RL)
+* Camera streaming
+* Object detection
+* Synthetic data generation
+* RL with Isaac Lab
+
+### Module 4: VLA (Vision‑Language‑Action)
+* GPT + Whisper
+* Perception→Action pipelines
+* Language‑based robot control
+* Multi-step reasoning
+
+## Core Deliverables
+
+* Complete Docusaurus textbook
+* GitHub repo with:
+  * markdown chapters
+  * images
+  * simulation files
+  * ROS 2 packages
+* Fully deployable GitHub Pages site
+* RAG chatbot powered by the textbook
+* Full Spec-Kit Plus project with specs, tasks, ADRs, PHRs
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+All textbook content must follow the Spec-Kit Plus workflow ensuring systematic development and documentation. All modules must cover the required curriculum areas. Changes to this constitution require explicit approval and documentation via the Spec-Kit Plus process.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-09 | **Last Amended**: 2025-12-09
